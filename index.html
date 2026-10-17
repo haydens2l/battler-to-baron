@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b1a14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Battler to Baron">
+<meta name="application-name" content="Battler to Baron">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Battler to Baron: an Aussie idle tycoon. Dig out of debt and build an empire. No ads, no paywalls.">
+<title>Battler to Baron</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="manifest" id="manifestLink">
+<style>
+:root{--bg:#0b1a14;--bg2:#10241c;--card:#163126;--card2:#1c3c2f;--line:#25493a;--tx:#eef7f1;--dim:#93b3a3;--gold:#ffc83d;--gold2:#ff9f1c;--mint:#3ee08f;--red:#ff5d5d;--sky:#53b8ff;--pur:#b48cff;
+--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--tx);font:15px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+body{display:flex;flex-direction:column;overflow:hidden}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation}
+input,textarea{font:16px/1.3 ui-monospace,Menlo,monospace;color:var(--tx);background:#08130e;border:1px solid var(--line);border-radius:12px;padding:10px;width:100%;-webkit-user-select:text;user-select:text}
+textarea{height:90px;resize:none;word-break:break-all}
+#hdr{flex:none;padding:calc(var(--sat) + 10px) 14px 8px;background:linear-gradient(180deg,#123426,#0f261d);border-bottom:1px solid var(--line);position:relative;z-index:3}
+.hrow{display:flex;align-items:center;gap:10px}
+#title{font-size:12px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.6px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#stars{font-size:12px;font-weight:800;color:var(--pur)}
+.ib{width:38px;height:38px;border-radius:12px;background:var(--card);display:grid;place-items:center;font-size:18px;flex:none}
+#cash{font-size:34px;font-weight:900;letter-spacing:-.5px;font-variant-numeric:tabular-nums;line-height:1.1;margin-top:2px;text-shadow:0 2px 12px rgba(62,224,143,.25)}
+#cash.neg{color:var(--red)}
+#ips{font-size:13px;color:var(--mint);font-weight:800;font-variant-numeric:tabular-nums}
+#boosts{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+#boosts:empty{display:none}
+.boost{font-size:11px;font-weight:800;padding:3px 8px;border-radius:99px;background:rgba(255,200,61,.15);color:var(--gold);border:1px solid rgba(255,200,61,.35);animation:glow 1.4s ease-in-out infinite alternate}
+@keyframes glow{to{box-shadow:0 0 12px rgba(255,200,61,.45)}}
+#debt{margin-top:8px;background:rgba(255,93,93,.08);border:1px solid rgba(255,93,93,.35);border-radius:14px;padding:8px 10px}
+#debt .dt{display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:#ffb3b3}
+.bar{height:8px;border-radius:99px;background:rgba(0,0,0,.35);overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--mint),#9dffcb);width:0;transition:width .25s}
+#debt .bar i{background:linear-gradient(90deg,var(--red),var(--gold))}
+.payrow{display:flex;gap:6px;margin-top:6px}
+.payrow button{flex:1;padding:6px 0;border-radius:10px;background:rgba(255,93,93,.18);font-size:12px;font-weight:800;color:#ffd0d0}
+#goal{margin-top:8px;display:flex;gap:8px;align-items:center;background:rgba(83,184,255,.08);border:1px solid rgba(83,184,255,.3);border-radius:12px;padding:7px 10px;font-size:12.5px;font-weight:700;color:#cfe9ff}
+#goal b{color:var(--sky)}
+#main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 12px 20px;position:relative}
+#nav{flex:none;display:grid;grid-template-columns:repeat(5,1fr);background:#0d2019;border-top:1px solid var(--line);padding:6px 4px calc(var(--sab) + 6px)}
+#nav button{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10.5px;font-weight:800;color:var(--dim);padding:4px 0;border-radius:12px;position:relative}
+#nav button span{font-size:22px;line-height:1.1;transition:transform .15s}
+#nav button.on{color:var(--gold);background:rgba(255,200,61,.08)}
+#nav button.on span{transform:translateY(-2px) scale(1.1)}
+.dot{position:absolute;top:2px;right:22%;width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 2px #0d2019;display:none}
+.dot.on{display:block;animation:pop .4s}
+@keyframes pop{from{transform:scale(0)}}
+.sec{font-size:11.5px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin:16px 4px 8px}
+.sec:first-child{margin-top:2px}
+.hint{font-size:12.5px;color:var(--dim)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px}
+#tapWrap{display:flex;align-items:center;gap:14px;background:radial-gradient(circle at 20% 50%,#1f4a37,var(--card));border:1px solid var(--line);border-radius:22px;padding:12px 14px;margin-bottom:10px;position:relative;overflow:hidden}
+#tapBtn{width:92px;height:92px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#ffe08a,var(--gold) 45%,var(--gold2));box-shadow:0 6px 0 #b86e0a,0 10px 24px rgba(255,159,28,.35);font-size:40px;display:grid;place-items:center;transition:transform .06s,box-shadow .06s;position:relative}
+#tapBtn:active,#tapBtn.hit{transform:translateY(4px) scale(.97);box-shadow:0 2px 0 #b86e0a,0 6px 16px rgba(255,159,28,.3)}
+#tapInfo b{display:block;font-size:17px}
+#tapInfo .v{font-size:20px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums}
+.modes{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;background:#0d2019;border-radius:12px;padding:4px;margin-bottom:10px}
+.modes button{padding:7px 0;border-radius:9px;font-size:12.5px;font-weight:900;color:var(--dim)}
+.modes button.on{background:var(--gold);color:#2a1b00}
+.biz{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;margin-bottom:8px;position:relative;transition:border-color .2s}
+.biz.lock{opacity:.55}
+.bico{width:62px;height:62px;border-radius:16px;background:var(--card2);display:grid;place-items:center;font-size:32px;position:relative;transition:transform .08s}
+.bico:active{transform:scale(.92)}
+.bico.idle{animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(255,200,61,0)}50%{box-shadow:0 0 0 4px rgba(255,200,61,.45)}}
+.lvl{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);background:#0b1a14;border:1px solid var(--line);border-radius:99px;font-size:11px;font-weight:900;padding:0 7px;color:var(--gold);white-space:nowrap}
+.mg{position:absolute;top:-6px;right:-6px;font-size:15px}
+.bn{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+.bn b{font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bn .rv{font-size:13px;font-weight:900;color:var(--mint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pbar{height:16px;border-radius:99px;background:rgba(0,0,0,.35);overflow:hidden;margin:6px 0;position:relative}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2fbf7a,#7dffbd);border-radius:99px}
+.pbar.fast i{width:100%!important;background:repeating-linear-gradient(45deg,#2fbf7a 0 10px,#55e39b 10px 20px);background-size:28px 28px;animation:stripe .6s linear infinite}
+@keyframes stripe{to{background-position:28px 0}}
+.pbar em{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-size:10.5px;font-weight:900;color:#06140d;text-shadow:0 0 4px rgba(255,255,255,.4)}
+.brow{display:flex;gap:8px;align-items:center}
+.ms{flex:1;font-size:11px;color:var(--dim);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.buy{min-width:118px;padding:8px 10px;border-radius:12px;background:#2a3f36;color:#8aa597;font-size:12.5px;font-weight:900;line-height:1.15;text-align:center;transition:transform .08s,background .2s}
+.buy small{display:block;font-size:10.5px;opacity:.8}
+.buy.can{background:linear-gradient(180deg,#ffd45e,var(--gold2));color:#2a1b00;box-shadow:0 3px 0 #b86e0a}
+.buy.can:active{transform:translateY(2px);box-shadow:0 1px 0 #b86e0a}
+.row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:8px;width:100%;text-align:left}
+.row .ic{width:44px;height:44px;border-radius:12px;background:var(--card2);display:grid;place-items:center;font-size:24px;flex:none}
+.row .tx{flex:1;min-width:0}
+.row .tx b{display:block;font-size:14px}
+.row .tx span{display:block;font-size:12px;color:var(--dim)}
+.row.done{opacity:.55}
+.btn{padding:11px 14px;border-radius:14px;background:var(--card2);font-weight:900;font-size:14px;text-align:center;border:1px solid var(--line)}
+.btn.gold{background:linear-gradient(180deg,#ffd45e,var(--gold2));color:#2a1b00;border:0;box-shadow:0 4px 0 #b86e0a}
+.btn.pur{background:linear-gradient(180deg,#c9a8ff,#8a5cf6);color:#160a33;border:0;box-shadow:0 4px 0 #5b36b0}
+.btn.red{background:rgba(255,93,93,.15);color:#ffb3b3;border-color:rgba(255,93,93,.4)}
+.btn.block{display:block;width:100%}
+.btn.dis,.buy.dis{opacity:.45;pointer-events:none}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.flex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 6px;text-align:center;font-size:11.5px;font-weight:800;min-height:116px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:4px}
+.flex .fe{font-size:34px}
+.flex.own{border-color:var(--gold);background:linear-gradient(180deg,#2b3a1c,var(--card))}
+.flex.lockd .fe{filter:grayscale(1) brightness(.6)}
+.ach{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 4px;text-align:center;font-size:10.5px;font-weight:800;color:var(--dim)}
+.ach .ae{font-size:24px;display:block}
+.ach.got{color:var(--tx);border-color:rgba(255,200,61,.5)}
+.ach:not(.got) .ae{filter:grayscale(1);opacity:.4}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kv div{background:var(--card2);border-radius:12px;padding:8px 10px}
+.kv span{display:block;font-size:10.5px;color:var(--dim);font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.kv b{font-size:15px;font-variant-numeric:tabular-nums}
+.pos{color:var(--mint)}.neg{color:var(--red)}.gld{color:var(--gold)}.purp{color:var(--pur)}
+#mWrap{position:fixed;inset:0;background:rgba(3,10,7,.72);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:18px;z-index:20}
+#mWrap.on{display:flex}
+#modal{width:100%;max-width:400px;max-height:88vh;overflow-y:auto;background:linear-gradient(180deg,#1b3b2e,#132b21);border:1px solid var(--line);border-radius:24px;padding:18px;text-align:center;animation:mIn .28s cubic-bezier(.2,1.4,.4,1)}
+@keyframes mIn{from{transform:scale(.85) translateY(20px);opacity:0}}
+.mE{font-size:54px;line-height:1.1}
+.mT{font-size:20px;font-weight:900;margin:6px 0 4px}
+.mX{font-size:14px;color:#cfe3d8;margin-bottom:12px}
+.mC{display:flex;flex-direction:column;gap:8px}
+.mC .btn small{display:block;font-size:11.5px;font-weight:700;opacity:.8;margin-top:2px}
+.big{font-size:30px;font-weight:900;color:var(--gold);margin:6px 0}
+#toasts{position:fixed;top:calc(var(--sat) + 8px);left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:6px;pointer-events:none;z-index:30}
+.toast{background:#0a1712f2;border:1px solid var(--line);border-radius:14px;padding:9px 14px;font-size:13px;font-weight:800;max-width:92%;text-align:center;animation:tIn .3s ease-out;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.toast.out{opacity:0;transform:translateY(-10px);transition:.3s}
+@keyframes tIn{from{transform:translateY(-16px);opacity:0}}
+.fl{position:fixed;pointer-events:none;font-weight:900;font-size:18px;color:var(--gold);text-shadow:0 2px 6px rgba(0,0,0,.6);z-index:25;animation:flUp .9s ease-out forwards;white-space:nowrap}
+@keyframes flUp{to{transform:translate(var(--dx,0),-70px) scale(1.15);opacity:0}}
+.coin{position:fixed;pointer-events:none;font-size:18px;z-index:24;animation:coin .7s ease-out forwards}
+@keyframes coin{to{transform:translate(var(--dx),var(--dy)) rotate(260deg);opacity:0}}
+#roo{position:fixed;font-size:46px;z-index:15;display:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));padding:8px}
+#roo.on{display:block;animation:hop 9s linear forwards}
+@keyframes hop{0%{transform:translate(-80px,0)}5%{transform:translate(-40px,-40px)}10%{transform:translate(0,0)}15%{transform:translate(40px,-40px)}20%{transform:translate(80px,0)}25%{transform:translate(120px,-40px)}30%{transform:translate(160px,0)}35%{transform:translate(200px,-40px)}40%{transform:translate(240px,0)}45%{transform:translate(280px,-40px)}50%{transform:translate(320px,0)}55%{transform:translate(360px,-40px)}60%{transform:translate(400px,0)}100%{transform:translate(700px,0)}}
+.confetti{position:fixed;width:8px;height:12px;z-index:40;pointer-events:none;animation:fall 1.6s ease-in forwards}
+@keyframes fall{to{transform:translate(var(--dx),105vh) rotate(720deg)}}
+.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.flash{animation:flash .5s}
+@keyframes flash{from{background:#2f6b4f}}
+.logo{font-size:30px;font-weight:900;letter-spacing:-.5px}
+.logo span{color:var(--gold)}
+@media (min-width:600px){body{max-width:520px;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header id="hdr">
+ <div class="hrow"><div id="title">Flat-broke battler</div><div id="stars"></div><button class="ib" data-act="settings" aria-label="Settings">⚙️</button></div>
+ <div id="cash">$0</div><div id="ips">$0/s</div>
+ <div id="boosts"></div>
+ <div id="debt"></div>
+ <div id="goal"></div>
+</header>
+<main id="main"></main>
+<nav id="nav">
+ <button data-tab="biz" class="on"><span>🏪</span>Hustle</button>
+ <button data-tab="upg"><span>⬆️</span>Upgrades<i class="dot" id="dUpg"></i></button>
+ <button data-tab="mgr"><span>🤝</span>Managers<i class="dot" id="dMgr"></i></button>
+ <button data-tab="flex"><span>😎</span>Flex<i class="dot" id="dFlex"></i></button>
+ <button data-tab="boss"><span>👑</span>Boss<i class="dot" id="dBoss"></i></button>
+</nav>
+<button id="roo" aria-label="Lucky kangaroo">🦘</button>
+<div id="mWrap"><div id="modal"></div></div>
+<div id="toasts"></div>
+<script>
+'use strict';
+
+/* ===== BATTLER TO BARON · engine (pure, no DOM) ===== */
+const SAVE_KEY='battlerToBaron.save',SAVE_VERSION=1;
+const BIZ=[
+ {id:'sizzle',n:'Sausage Sizzle',e:'🌭',cost:3,rev:1,t:0.75,r:1.07,d:'Snags, bread, onions on the bottom.'},
+ {id:'mow',n:'Lawn Mowing Run',e:'🌿',cost:55,rev:22,t:2.5,r:1.15,d:'Every nature strip in the suburb.'},
+ {id:'detail',n:'Car Detailing',e:'🧽',cost:700,rev:210,t:5,r:1.14,d:'Utes buffed to a mirror shine.'},
+ {id:'truck',n:'Food Truck',e:'🚚',cost:9000,rev:2200,t:11,r:1.13,d:'Loaded fries at every footy game.'},
+ {id:'phone',n:'Phone Repair Kiosk',e:'📱',cost:120000,rev:24000,t:24,r:1.125,d:'Cracked screens, cracked profits.'},
+ {id:'cafe',n:'Hipster Café',e:'☕',cost:1.6e6,rev:290000,t:60,r:1.12,d:'Smashed avo and oat flat whites.'},
+ {id:'gym',n:'24/7 Gym Chain',e:'🏋️',cost:2.2e7,rev:3.6e6,t:150,r:1.115,d:'Never skip leg day (or direct debit).'},
+ {id:'brew',n:'Craft Brewery',e:'🍺',cost:3.1e8,rev:4.6e7,t:380,r:1.11,d:'Hazy IPAs with silly names.'},
+ {id:'realty',n:'Real Estate Agency',e:'🏘️',cost:4.5e9,rev:6.2e8,t:960,r:1.11,d:'"Renovator\'s dream" means it\'s on fire.'},
+ {id:'mine',n:'Iron Ore Mine',e:'⛏️',cost:7e10,rev:9e9,t:2400,r:1.105,d:'Digging up the Pilbara, one truck at a time.'},
+ {id:'airline',n:'Budget Airline',e:'✈️',cost:1.2e12,rev:1.4e11,t:6000,r:1.1,d:'Legroom costs extra.'},
+ {id:'bank',n:'Big Bank',e:'🏦',cost:2.2e13,rev:2.4e12,t:15000,r:1.1,d:'Fees on your fees.'},
+ {id:'space',n:'Outback Spaceport',e:'🚀',cost:4.5e14,rev:4.5e13,t:36000,r:1.1,d:'Launching from Woomera to the Moon.'},
+];
+const MILESTONES=[10,25,50,100,150,200,250,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000];
+const msEffect=l=>[25,100,300,600,1000].includes(l)?'speed':'profit';
+const MGR_MULT=400;
+const MGRS=['Shazza','Davo','Kylie','Bazza','Tran','Priya','Macca','Jules','Robbo','Mei','Gazza','Fitzy','Indi'];
+// upgrades
+const UPG=[];
+(()=>{const tierMult=[1.5e4,1.2e7,4e10,3e15,4e21,6e28];const names=['Better gear','Hired help','Franchise it','Go national','Go global','Interplanetary'];
+ BIZ.forEach((b,i)=>tierMult.forEach((m,j)=>UPG.push({id:'u'+i+'_'+j,b:i,x:3,cost:b.cost*m,n:names[j]+': '+b.n,e:b.e})));
+ [[2e8,'Instagram page'],[5e12,'TV ad in the footy'],[2e17,'Sponsor the Ashes'],[8e22,'Billboard on the Harbour Bridge'],[3e29,'Super Bowl ad'],[5e36,'Naming rights to the Moon']].forEach(([c,n],j)=>UPG.push({id:'all'+j,b:-1,x:3,cost:c,n:'All businesses x3: '+n,e:'📣'}));
+ [[300,'Steel-cap boots'],[2.5e4,'Hi-vis vest'],[4e6,'Esky on wheels'],[2e9,'Power tools'],[3e12,'Hustle podcast'],[1e16,'Personal assistant']].forEach(([c,n],j)=>UPG.push({id:'tap'+j,b:-2,x:3,cost:c,n:'Hustle x3: '+n,e:'👊'}));
+ UPG.sort((a,b)=>a.cost-b.cost);})();
+// Boss Moves (bought with Grit, permanent)
+const MOVES=[
+ {id:'seed',n:'Seed money',e:'💵',d:'Start each run with more cash',max:15,c:l=>Math.ceil(2*Math.pow(1.8,l))},
+ {id:'mgr',n:'Loyal managers',e:'🤝',d:'Keep 1 more manager after selling up (cheapest first)',max:13,c:l=>Math.ceil(3*Math.pow(1.7,l))},
+ {id:'off',n:'Night shift',e:'🌙',d:'+2h offline earnings cap',max:8,c:l=>Math.ceil(3*Math.pow(1.8,l))},
+ {id:'roo',n:'Roo whisperer',e:'🦘',d:'Lucky roos appear 15% more often',max:5,c:l=>Math.ceil(4*Math.pow(2,l))},
+ {id:'tap',n:'Iron fist',e:'👊',d:'Hustle taps x2',max:15,c:l=>Math.ceil(2*Math.pow(1.7,l))},
+ {id:'speed',n:'Time is money',e:'⏱️',d:'All businesses 10% faster',max:20,c:l=>Math.ceil(5*Math.pow(1.9,l))},
+ {id:'star',n:'Brand legend',e:'🌟',d:'Each Star gives +1% more',max:5,c:l=>Math.ceil(15*Math.pow(2.6,l))},
+];
+const FLEX=[
+ {id:'ute',n:'Dual-cab ute',e:'🛻',cost:5e4},{id:'jetski',n:'Jet ski',e:'🌊',cost:2e6},{id:'boat',n:'Tinnie with a big motor',e:'🚤',cost:1.5e8},
+ {id:'beach',n:'Beach house in Noosa',e:'🏖️',cost:2e10},{id:'super',n:'Italian supercar',e:'🏎️',cost:4e12},{id:'art',n:'Big Banana original painting',e:'🍌',cost:1e15},
+ {id:'yacht',n:'Superyacht',e:'🛥️',cost:3e17},{id:'footy',n:'Footy club',e:'🏉',cost:1e20},{id:'island',n:'Private island',e:'🏝️',cost:5e22},
+ {id:'station',n:'Cattle station the size of Belgium',e:'🐄',cost:3e25},{id:'opera',n:'Your name on the Opera House',e:'🎭',cost:2e28},{id:'moon',n:'Moon base',e:'🌕',cost:1e32},
+];
+const FLEX_BONUS=0.1;
+const QUEST=[
+ {f:.1,e:'🛻',n:'Got the ute back from the repo yard',d:'Hustle taps x2',k:'tap'},
+ {f:.25,e:'🍻',n:'Your mates are talking to you again',d:'All businesses 15% faster',k:'speed'},
+ {f:.5,e:'👵',n:'Mum forgave you (and made a roast)',d:'+3h offline cap',k:'off'},
+ {f:.75,e:'💞',n:'Your partner moved back in',d:'All profits x1.5',k:'profit'},
+ {f:1,e:'🏡',n:'Debt free! Bought back the family home',d:'All profits x2 + selling up unlocked',k:'free'},
+];
+const DEBT0=1e10;
+const TITLES=[[0,'Flat-broke battler'],[1e3,'Sausage sizzle spruiker'],[1e5,'Side hustler'],[1e6,'Tradie with a dream'],[1e8,'Small business owner'],[1e10,'Local legend'],[1e12,'Rich lister'],[1e15,'Mining magnate'],[1e18,'Media mogul'],[1e21,'Bank baron'],[1e25,'Continental tycoon'],[1e30,'Baron of the Southern Cross'],[1e40,'Galactic baron']];
+const ACH=[];
+(()=>{BIZ.forEach((b,i)=>[25,100,250,500].forEach(n=>ACH.push({id:'b'+i+'_'+n,e:b.e,n:`${n} ${b.n}`,c:S=>S.biz[i].n>=n})));
+ [[1e3,'First grand'],[1e6,'Millionaire'],[1e9,'Billionaire'],[1e12,'Trillionaire'],[1e15,'Quadrillionaire'],[1e18,'Quintillionaire'],[1e24,'Septillionaire'],[1e30,'Nonillionaire']].forEach(([v,n],j)=>ACH.push({id:'life'+j,e:'💰',n,c:S=>S.lifetime>=v}));
+ [[100,'Tapper'],[1000,'Hustler'],[10000,'Machine']].forEach(([v,n],j)=>ACH.push({id:'tap'+j,e:'👊',n:n+` (${v} taps)`,c:S=>S.stats.taps>=v}));
+ [[1,'Lucky roo'],[10,'Roo spotter'],[50,'Skippy\'s mate']].forEach(([v,n],j)=>ACH.push({id:'roo'+j,e:'🦘',n,c:S=>S.stats.roos>=v}));
+ [[1,'Decision maker'],[25,'Crisis manager'],[100,'Seen it all']].forEach(([v,n],j)=>ACH.push({id:'ev'+j,e:'🃏',n,c:S=>S.stats.events>=v}));
+ [[1,'Fresh start'],[5,'Serial founder'],[20,'Dynasty']].forEach(([v,n],j)=>ACH.push({id:'pr'+j,e:'🔁',n,c:S=>S.stats.prestiges>=v}));
+ ACH.push({id:'free',e:'🏡',n:'Debt free',c:S=>S.debt<=0});
+ [[1,'All hands'],[6,'Middle management'],[13,'Full board']].forEach(([v,n],j)=>ACH.push({id:'mg'+j,e:'🤝',n,c:S=>S.biz.filter(b=>b.mgr).length>=v}));
+ [[3,'Flexing'],[12,'Absolute flex']].forEach(([v,n],j)=>ACH.push({id:'fx'+j,e:'😎',n,c:S=>Object.keys(S.flex).length>=v}));
+})();
+const ACH_BONUS=0.02;
+const STAR_DIV=1e12;
+// ---------- state ----------
+function freshRun(S){S.cash=0;S.runEarned=0;S.biz=BIZ.map(()=>({n:0,p:0,run:false,mgr:false}));S.biz[0].n=1;S.upg={};S.boosts=[];
+ S.cash=S.moves.seed?Math.pow(10,S.moves.seed+1)*5:0;
+ const keep=S.moves.mgr||0;for(let i=0;i<Math.min(keep,BIZ.length);i++)S.biz[i].mgr=true;S.runStart=Date.now();}
+function newState(){const S={v:SAVE_VERSION,debt:DEBT0,debtPaid:0,quest:{},lifetime:0,stars:0,grit:0,moves:{},ach:{},flex:{},
+ stats:{taps:0,roos:0,events:0,prestiges:0,played:0,best:0},buy:1,settings:{haptics:true,sound:true},created:Date.now(),last:Date.now(),evNext:90,rooNext:45,seenTip:{}};
+ freshRun(S);return S;}
+// ---------- multipliers ----------
+const has=(S,k)=>QUEST.some(q=>q.k===k&&S.quest[q.k]);
+function boostMult(S,now){let m=1;for(const b of S.boosts)if(b.until>now&&b.k!=='tap')m*=b.m;return m;}
+function effStars(S){const x=S.stars;return x<=1000?x:1000*Math.pow(x/1000,0.7);}
+function starBonus(S){return effStars(S)*(0.02+0.01*(S.moves.star||0));}
+function globalMult(S,now){let m=1+starBonus(S);
+ m*=1+ACH_BONUS*Object.keys(S.ach).length;m*=1+FLEX_BONUS*Object.keys(S.flex).length;
+ if(S.quest.profit)m*=1.5;if(S.quest.free)m*=2;
+ for(const u of UPG)if(u.b===-1&&S.upg[u.id])m*=u.x;
+ return m*boostMult(S,now||Date.now());}
+function msCount(n){let c=0;for(const l of MILESTONES)if(n>=l)c++;return c;}
+function bizProfitMult(S,i){const n=S.biz[i].n;let m=1;for(const l of MILESTONES){if(n<l)break;if(msEffect(l)==='profit')m*=2;}
+ for(const u of UPG)if(u.b===i&&S.upg[u.id])m*=u.x;return m;}
+function bizTime(S,i){const n=S.biz[i].n;let t=BIZ[i].t;for(const l of MILESTONES){if(n<l)break;if(msEffect(l)==='speed')t/=2;}
+ let sp=1+0.1*(S.moves.speed||0);if(S.quest.speed)sp*=1.15;return t/sp;}
+function bizRev(S,i,gm){return BIZ[i].rev*S.biz[i].n*bizProfitMult(S,i)*gm;}
+function incomePerSec(S,now,managedOnly=true){const gm=globalMult(S,now);let s=0;for(let i=0;i<BIZ.length;i++){const b=S.biz[i];if(b.n>0&&(b.mgr||!managedOnly))s+=bizRev(S,i,gm)/bizTime(S,i);}return s;}
+function tapPct(S){let k=0;for(const u of UPG)if(u.b===-2&&S.upg[u.id])k++;if(S.quest.tap)k++;k+=S.moves.tap||0;return 0.02*(1+0.5*k);}
+function tapValue(S,now){let m=1;for(const u of UPG)if(u.b===-2&&S.upg[u.id])m*=u.x;if(S.quest.tap)m*=2;m*=Math.pow(2,S.moves.tap||0);
+ let bm=1;for(const b of S.boosts)if(b.until>(now||Date.now())&&b.k==='tap')bm*=b.m;
+ return Math.max(1,(m+incomePerSec(S,now,false)*tapPct(S))*bm);}
+function costFor(S,i,k){const B=BIZ[i],n=S.biz[i].n;return B.cost*Math.pow(B.r,n)*(Math.pow(B.r,k)-1)/(B.r-1);}
+function maxBuy(S,i,cash){const B=BIZ[i],n=S.biz[i].n;const k=Math.floor(Math.log(cash*(B.r-1)/(B.cost*Math.pow(B.r,n))+1)/Math.log(B.r));return Math.max(0,k);}
+function buyQty(S,i){if(S.buy==='max')return Math.max(1,maxBuy(S,i,S.cash));if(S.buy==='next'){const n=S.biz[i].n;const nx=MILESTONES.find(l=>l>n)||n+1;return nx-n;}return S.buy;}
+function mgrCost(i){return BIZ[i].cost*MGR_MULT*(i===0?1:1);}
+function offlineCap(S){return 3600*(8+2*(S.moves.off||0)+(S.quest.off?3:0));}
+function earn(S,v){S.cash+=v;S.runEarned+=v;S.lifetime+=v;}
+function starsTotal(S){return Math.floor(5*Math.cbrt(S.lifetime/STAR_DIV));}
+function starsGain(S){return Math.max(0,starsTotal(S)-S.stars-(S.starsSpentBase||0));}
+function title(S){let t=TITLES[0][1];for(const [v,n] of TITLES)if(S.lifetime>=v)t=n;return t;}
+// ---------- actions ----------
+function buyBiz(S,i,k){k=k||1;const c=costFor(S,i,k);if(S.cash<c)return false;if(i>0&&S.biz[i-1].n===0&&S.biz[i].n===0)return false;S.cash-=c;S.biz[i].n+=k;return true;}
+function hireMgr(S,i){const c=mgrCost(i);if(S.biz[i].mgr||S.cash<c||S.biz[i].n<1)return false;S.cash-=c;S.biz[i].mgr=true;return true;}
+function buyUpg(S,id){const u=UPG.find(x=>x.id===id);if(!u||S.upg[id]||S.cash<u.cost)return false;S.cash-=u.cost;S.upg[id]=1;return true;}
+function buyFlex(S,id){const f=FLEX.find(x=>x.id===id);if(!f||S.flex[id]||S.cash<f.cost)return false;S.cash-=f.cost;S.flex[id]=1;return true;}
+function payDebt(S,amt){amt=Math.min(amt,S.cash,S.debt);if(amt<=0)return [];S.cash-=amt;S.debt-=amt;S.debtPaid+=amt;if(S.debt<1)S.debt=0;
+ const got=[];for(const q of QUEST)if(!S.quest[q.k]&&S.debtPaid/DEBT0>=q.f-1e-9){S.quest[q.k]=1;got.push(q);}return got;}
+function tap(S,now){const v=tapValue(S,now);earn(S,v);S.stats.taps++;return v;}
+function runBiz(S,i){const b=S.biz[i];if(b.n<1||b.run||b.mgr)return false;b.run=true;b.p=0;return true;}
+function canPrestigeE(S){return !!S.quest.free&&starsGain(S)>=1;}
+function prestige(S){const g=starsGain(S);if(!canPrestigeE(S))return 0;S.stars+=g;S.grit+=g;S.stats.prestiges++;freshRun(S);return g;}
+function buyMove(S,id){const M=MOVES.find(x=>x.id===id);const l=S.moves[id]||0;if(l>=M.max)return false;const c=M.c(l);if(S.grit<c)return false;S.grit-=c;S.moves[id]=l+1;if(id==='mgr'&&S.biz[l])S.biz[l].mgr=true;return true;}
+// ---------- simulation ----------
+function tick(S,dt,now){now=now||Date.now();const gm=globalMult(S,now);let got=0;
+ for(let i=0;i<BIZ.length;i++){const b=S.biz[i];if(b.n<1)continue;if(!b.mgr&&!b.run)continue;const t=bizTime(S,i);b.p+=dt/t;
+  if(b.p>=1){if(b.mgr){const c=Math.floor(b.p);b.p-=c;got+=bizRev(S,i,gm)*c;}else{b.p=0;b.run=false;got+=bizRev(S,i,gm);}}}
+ S.boosts=S.boosts.filter(b=>b.until>now);if(got)earn(S,got);S.stats.played+=dt;return got;}
+function offline(S,now){const el=Math.max(0,(now-S.last)/1000);if(el<30)return null;const cap=offlineCap(S);const secs=Math.min(el,cap);
+ S.boosts=[];const ips=incomePerSec(S,now,true);const v=ips*secs;
+ // unmanaged running jobs complete
+ for(const b of S.biz)if(b.run&&!b.mgr){b.p=0;b.run=false;}
+ earn(S,v);return {el,secs,v,capped:el>cap};}
+function checkAch(S){const got=[];for(const a of ACH)if(!S.ach[a.id]&&a.c(S)){S.ach[a.id]=1;got.push(a);}return got;}
+
+/* ===== events: every choice shows its real cost/effect ===== */
+const rnd=(a,b)=>a+Math.random()*(b-a),chance=p=>Math.random()<p,pick=a=>a[Math.floor(Math.random()*a.length)];
+function ipsNow(){return Math.max(incomePerSec(S,Date.now(),false),tapValue(S,Date.now())*1.5,1);}
+const secs=n=>ipsNow()*n;
+function give(v){earn(S,v);return '+'+money(v);}
+function take(v){v=Math.min(v,Math.max(0,S.cash));S.cash-=v;return '-'+money(v);}
+function boost(k,m,sec,label){S.boosts.push({k,m,until:Date.now()+sec*1000,label});return `${label} for ${fmtT(sec)}`;}
+const EVENTS=[
+ {id:'gf',e:'🏉',t:'Grand Final weekend',x:'The whole country is glued to the footy. How do you play it?',o:[
+  {l:'Sponsor the pub big screen',d:()=>`Cost ${money(secs(90))} · x2 profits for 5 min`,f:()=>{take(secs(90));return boost('p',2,300,'x2 profits');}},
+  {l:'Close early and watch it',d:()=>'Free · x5 Hustle taps for 2 min',f:()=>boost('tap',5,120,'x5 Hustle')},
+  {l:'Work right through it',d:()=>`+${money(secs(45))} now`,f:()=>give(secs(45))}]},
+ {id:'audit',e:'🧾',t:'Tax audit',x:'A letter from the tax office. They want to see your books.',o:[
+  {l:'Hire a proper accountant',d:()=>`Cost ${money(secs(60))} · guaranteed clean`,f:()=>{take(secs(60));return 'All squared away. Your accountant even found a deduction.';}},
+  {l:'Shoebox of receipts',d:()=>'Free · 50% chance of a fine',f:()=>chance(.5)?'They let it slide. Phew.':'Fined! '+take(secs(240))},
+  {l:'Lodge an amendment first',d:()=>`Cost ${money(secs(120))} · x1.5 profits for 5 min (clean books, calm mind)`,f:()=>{take(secs(120));return boost('p',1.5,300,'x1.5 profits');}}]},
+ {id:'cyclone',e:'🌀',t:'Cyclone warning',x:'A big one is tracking down the coast.',o:[
+  {l:'Board everything up',d:()=>`Cost ${money(secs(100))} · no damage`,f:()=>{take(secs(100));return 'You rode it out without a scratch.';}},
+  {l:'Risk it',d:()=>'Free · 40% chance of big repairs',f:()=>chance(.6)?'It veered out to sea. Lucky.':'Damage everywhere. '+take(secs(400))},
+  {l:'Sell sandbags to the neighbours',d:()=>`+${money(secs(70))}, but 25% chance of a bad review`,f:()=>{const g=give(secs(70));return chance(.25)?g+'. Someone called you a price gouger online.':g+'. Community hero!';}}]},
+ {id:'viral',e:'📱',t:'You went viral',x:'A video of your sausage-flipping technique has 3 million views.',o:[
+  {l:'Ride the wave',d:()=>'x3 profits for 3 min',f:()=>boost('p',3,180,'x3 profits')},
+  {l:'Sell merch',d:()=>`+${money(secs(150))} now`,f:()=>give(secs(150))},
+  {l:'Start a podcast about it',d:()=>'x10 Hustle taps for 3 min',f:()=>boost('tap',10,180,'x10 Hustle')}]},
+ {id:'kev',e:'📞',t:'Big Kev is on the phone',x:'"Just checking in, mate. Hate to see anything happen to that nice ute."',c:()=>S.debt>0,o:[
+  {l:'Pay a chunk now',d:()=>`Pay ${money(Math.min(S.cash*.3,S.debt))} toward the debt`,f:()=>{const v=Math.min(S.cash*.3,S.debt);const q=payDebt(S,v);questToast(q);return `Paid ${money(v)}. Kev sounds almost friendly.`;}},
+  {l:'Promise it\'s coming',d:()=>'Free · nothing happens (this time)',f:()=>'"Righto." He hangs up. Ominous.'},
+  {l:'Work double shifts',d:()=>'x2 profits for 4 min, and you\'re knackered',f:()=>boost('p',2,240,'x2 profits')}]},
+ {id:'mate',e:'🍻',t:'A mate needs a loan',x:'Your old mate Dazza wants to borrow some cash for a "sure thing".',o:[
+  {l:'Lend it',d:()=>`Lend ${money(secs(120))} · 60% chance he pays back double`,f:()=>{take(secs(120));return chance(.6)?'Dazza came good! '+give(secs(240)):'You never saw that money again.';}},
+  {l:'Shout him a beer instead',d:()=>`Cost ${money(secs(5))} · x3 Hustle for 2 min`,f:()=>{take(secs(5));return boost('tap',3,120,'x3 Hustle');}},
+  {l:'Say no',d:()=>'Free',f:()=>'Dazza understands. Mostly.'}]},
+ {id:'influencer',e:'🤳',t:'An influencer drops by',x:'A wellness influencer wants a freebie in exchange for "exposure".',o:[
+  {l:'Give them the works',d:()=>`Cost ${money(secs(30))} · 70% chance of x2.5 profits for 4 min`,f:()=>{take(secs(30));return chance(.7)?boost('p',2.5,240,'x2.5 profits'):'They posted a blurry photo with no tag.';}},
+  {l:'Charge full price',d:()=>`+${money(secs(15))}`,f:()=>give(secs(15))},
+  {l:'Politely decline',d:()=>'Free',f:()=>'Peace and quiet.'}]},
+ {id:'power',e:'⚡',t:'Blackout',x:'The whole street has lost power.',o:[
+  {l:'Hire a generator',d:()=>`Cost ${money(secs(60))} · x1.5 for 3 min (you\'re the only one open)`,f:()=>{take(secs(60));return boost('p',1.5,180,'x1.5 profits');}},
+  {l:'Candle-lit pop-up',d:()=>'x4 Hustle for 2 min',f:()=>boost('tap',4,120,'x4 Hustle')},
+  {l:'Go to the beach',d:()=>'Free · good for the soul',f:()=>'You came back sunburnt and happy.'}]},
+ {id:'investor',e:'💼',t:'An angel investor calls',x:'A tech bro in a puffer vest wants in.',o:[
+  {l:'Take the cheque',d:()=>`+${money(secs(300))} now`,f:()=>give(secs(300))},
+  {l:'Ask for mentoring instead',d:()=>'x2 profits for 8 min',f:()=>boost('p',2,480,'x2 profits')},
+  {l:'Tell him to rack off',d:()=>'Free · x3 Hustle for 2 min (pure spite)',f:()=>boost('tap',3,120,'x3 Hustle')}]},
+ {id:'payrise',e:'🧑‍🍳',t:'Staff want a pay rise',x:'Your crew says they\'re underpaid. They\'re not wrong.',o:[
+  {l:'Give them a raise',d:()=>`Cost ${money(secs(120))} · x2 profits for 6 min (happy crew)`,f:()=>{take(secs(120));return boost('p',2,360,'x2 profits');}},
+  {l:'Pizza party',d:()=>`Cost ${money(secs(10))} · 50% chance of x1.5 for 3 min`,f:()=>{take(secs(10));return chance(.5)?boost('p',1.5,180,'x1.5 profits'):'Nobody was fooled by the pizza.';}},
+  {l:'Say no',d:()=>'Free · x0.5 profits for 2 min (grumpy crew)',f:()=>boost('p',.5,120,'x0.5 profits')}]},
+ {id:'health',e:'🧑‍⚕️',t:'Health inspector',x:'Surprise inspection at the food truck!',c:()=>S.biz[3].n>0,o:[
+  {l:'Deep clean overnight',d:()=>`Cost ${money(secs(80))} · 5-star rating, x1.5 for 5 min`,f:()=>{take(secs(80));return boost('p',1.5,300,'x1.5 profits');}},
+  {l:'Hope for the best',d:()=>'Free · 35% chance of a fine',f:()=>chance(.65)?'Passed! Barely.':'Fined for a rogue onion. '+take(secs(180))},
+  {l:'Offer them a snag',d:()=>'Free · 50/50: they love it, or they don\'t',f:()=>chance(.5)?'They loved it. '+give(secs(40)):'Not amused. '+take(secs(60))}]},
+ {id:'cup',e:'🏇',t:'Melbourne Cup day',x:'The race that stops a nation. Fancy a punt?',o:[
+  {l:'Big bet on the favourite',d:()=>`Bet ${money(secs(100))} · 35% chance of x3`,f:()=>{take(secs(100));return chance(.35)?'It won! '+give(secs(300)):'Finished fourth. Classic.';}},
+  {l:'Office sweep',d:()=>`Bet ${money(secs(5))} · 1 in 12 chance of x24`,f:()=>{take(secs(5));return chance(1/12)?'You drew the winner! '+give(secs(120)):'Your horse is still running.';}},
+  {l:'Run a Cup Day lunch special',d:()=>'x2 profits for 4 min',f:()=>boost('p',2,240,'x2 profits')}]},
+ {id:'drop',e:'🐨',t:'Drop bear sighting',x:'A tourist swears a drop bear landed on their head near your shop.',o:[
+  {l:'Sell "drop bear repellent"',d:()=>`+${money(secs(80))} (it\'s Vegemite)`,f:()=>give(secs(80))},
+  {l:'Run drop bear tours',d:()=>'x2 profits for 5 min',f:()=>boost('p',2,300,'x2 profits')},
+  {l:'Tell them the truth',d:()=>'Free · good karma',f:()=>'They didn\'t believe you either.'}]},
+ {id:'ibis',e:'🐦',t:'Bin chicken raid',x:'A gang of ibis has raided your stock.',o:[
+  {l:'Buy ibis-proof bins',d:()=>`Cost ${money(secs(50))} · sorted for good`,f:()=>{take(secs(50));return 'The ibis glare at you from the car park.';}},
+  {l:'Chase them off',d:()=>'Free · 50% chance you lose stock anyway',f:()=>chance(.5)?'Victory!':'They came back with friends. '+take(secs(90))},
+  {l:'Make them the mascot',d:()=>'x3 Hustle for 3 min',f:()=>boost('tap',3,180,'x3 Hustle')}]},
+ {id:'heat',e:'🥵',t:'45° heatwave',x:'It\'s hot enough to fry an egg on the footpath.',o:[
+  {l:'Free ice blocks for customers',d:()=>`Cost ${money(secs(40))} · x2 profits for 5 min`,f:()=>{take(secs(40));return boost('p',2,300,'x2 profits');}},
+  {l:'Crank the aircon',d:()=>`Cost ${money(secs(20))}`,f:()=>{take(secs(20));return 'Cool as. Power bill: not cool.';}},
+  {l:'Close and go to the river',d:()=>'Free · x0.7 profits for 2 min',f:()=>boost('p',.7,120,'x0.7 profits')}]},
+ {id:'xmas',e:'🎄',t:'Christmas rush',x:'Everyone\'s shopping at once.',o:[
+  {l:'Hire casual staff',d:()=>`Cost ${money(secs(90))} · x3 profits for 4 min`,f:()=>{take(secs(90));return boost('p',3,240,'x3 profits');}},
+  {l:'Do it all yourself',d:()=>'x8 Hustle for 2 min',f:()=>boost('tap',8,120,'x8 Hustle')},
+  {l:'Close for the holidays',d:()=>`+${money(secs(30))} (gift cards sold online)`,f:()=>give(secs(30))}]},
+ {id:'council',e:'🏛️',t:'Council permit drama',x:'The council says your signage is 4cm too tall.',o:[
+  {l:'Pay for the permit',d:()=>`Cost ${money(secs(60))}`,f:()=>{take(secs(60));return 'Approved, eventually.';}},
+  {l:'Fight it at the meeting',d:()=>'Free · 50%: win and get famous (x2 for 4 min), or lose and get fined',f:()=>chance(.5)?'You won! The local paper loved it. '+boost('p',2,240,'x2 profits'):'Lost. '+take(secs(150))},
+  {l:'Cut the sign down yourself',d:()=>'Free',f:()=>'It\'s a bit wonky now. Charming, really.'}]},
+ {id:'supplier',e:'📦',t:'Supplier price hike',x:'Your main supplier just raised prices 20%.',o:[
+  {l:'Lock in a bulk deal',d:()=>`Cost ${money(secs(150))} · x1.5 profits for 10 min`,f:()=>{take(secs(150));return boost('p',1.5,600,'x1.5 profits');}},
+  {l:'Find a new supplier',d:()=>'Free · 60% chance of a better deal (x2 for 4 min)',f:()=>chance(.6)?boost('p',2,240,'x2 profits'):'The new one was worse. You switched back.'},
+  {l:'Wear the cost',d:()=>'Free · x0.8 profits for 3 min',f:()=>boost('p',.8,180,'x0.8 profits')}]},
+ {id:'shark',e:'🦈',t:'Shark sighting',x:'The beach is closed. Thousands of bored beachgoers are wandering your way.',o:[
+  {l:'Pop-up beach stall',d:()=>'x2.5 profits for 3 min',f:()=>boost('p',2.5,180,'x2.5 profits')},
+  {l:'Shark-themed specials',d:()=>`+${money(secs(60))}`,f:()=>give(secs(60))},
+  {l:'Go surfing anyway',d:()=>'Free · 90% fine, 10% expensive surfboard',f:()=>chance(.9)?'Best waves all year.':'A shark ate your board. '+take(secs(60))}]},
+ {id:'competitor',e:'😤',t:'A competitor opens next door',x:'They\'re undercutting you by 10%.',o:[
+  {l:'Price war',d:()=>`Cost ${money(secs(100))} · 60%: they close and you get x2 for 8 min`,f:()=>{take(secs(100));return chance(.6)?'They folded! '+boost('p',2,480,'x2 profits'):'Stalemate. Both of you lost money.';}},
+  {l:'Buy them out',d:()=>`Cost ${money(secs(250))} · +1 level to every business`,f:()=>{take(secs(250));S.biz.forEach(b=>{if(b.n>0)b.n++;});return 'Acquired! Every business got a free level.';}},
+  {l:'Ignore them',d:()=>'Free · x0.8 for 3 min',f:()=>boost('p',.8,180,'x0.8 profits')}]},
+ {id:'schoolies',e:'🎉',t:'Schoolies week',x:'The Gold Coast is overrun by school leavers.',o:[
+  {l:'Late-night menu',d:()=>'x3 profits for 2 min',f:()=>boost('p',3,120,'x3 profits')},
+  {l:'Sell overpriced water',d:()=>`+${money(secs(50))}`,f:()=>give(secs(50))},
+  {l:'Hide',d:()=>'Free',f:()=>'Probably wise.'}]},
+ {id:'grant',e:'🏦',t:'Small business grant',x:'There\'s a government grant, but the form is 47 pages.',o:[
+  {l:'Fill it out properly',d:()=>`75% chance of +${money(secs(200))}`,f:()=>chance(.75)?'Approved! '+give(secs(200)):'Rejected for using blue pen.'},
+  {l:'Pay a consultant',d:()=>`Cost ${money(secs(40))} · guaranteed +${money(secs(160))}`,f:()=>{take(secs(40));return 'Approved! '+give(secs(160));}},
+  {l:'Life\'s too short',d:()=>'Free · x2 Hustle for 3 min (you\'re fired up)',f:()=>boost('tap',2,180,'x2 Hustle')}]},
+ {id:'bushfire',e:'🔥',t:'Bushfire appeal',x:'Fires are tearing through the hinterland. The community needs help.',o:[
+  {l:'Donate big',d:()=>`Give ${money(secs(120))} · huge goodwill, x2 profits for 10 min`,f:()=>{take(secs(120));return 'Legend. '+boost('p',2,600,'x2 profits');}},
+  {l:'Run a fundraiser sizzle',d:()=>'x4 Hustle for 3 min (proceeds to the RFS)',f:()=>boost('tap',4,180,'x4 Hustle')},
+  {l:'Share the post',d:()=>'Free',f:()=>'Every bit helps.'}]},
+ {id:'coffee',e:'☕',t:'Coffee snob review',x:'A food critic says your flat white "tastes like regret".',c:()=>S.biz[5].n>0,o:[
+  {l:'Hire a champion barista',d:()=>`Cost ${money(secs(140))} · x2 profits for 10 min`,f:()=>{take(secs(140));return boost('p',2,600,'x2 profits');}},
+  {l:'Lean into it: "Regret Roasters"',d:()=>'60% chance of x3 for 3 min',f:()=>chance(.6)?boost('p',3,180,'x3 profits'):'Nobody got the joke.'},
+  {l:'Ignore it',d:()=>'Free',f:()=>'Critics. What do they know.'}]},
+];
+
+/* ===== UI ===== */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let S=null,tab='biz',sig='',lastT=performance.now(),uiAcc=0,shown=0,mOpen=false,mQ=[],AC=null;
+const UNITS=['K','M','B','T','Qa','Qi','Sx','Sp','Oc','No','Dc','UDc','DDc','TDc','QaDc','QiDc','SxDc','SpDc','OcDc','NoDc','Vg','UVg','DVg','TVg','QaVg','QiVg'];
+function fmtN(n){if(!isFinite(n))return '∞';const neg=n<0;n=Math.abs(n);let r;
+ if(n<1000)r=n<10&&n%1?n.toFixed(2):n<100&&n%1?n.toFixed(1):Math.floor(n).toString();
+ else{const e=Math.floor(Math.log10(n)/3);if((S&&S.settings.sci)||e>UNITS.length)r=n.toExponential(2).replace('e+','e');else{const v=n/Math.pow(1000,e);r=(v<10?v.toFixed(2):v<100?v.toFixed(1):v.toFixed(0))+UNITS[e-1];}}
+ return (neg?'-':'')+r;}
+const money=n=>(n<0?'-$':'$')+fmtN(Math.abs(n));
+function fmtT(s){s=Math.max(0,s);if(s<1)return s.toFixed(1)+'s';if(s<60)return Math.ceil(s)+'s';if(s<3600)return Math.floor(s/60)+'m '+Math.floor(s%60)+'s';if(s<86400)return Math.floor(s/3600)+'h '+Math.floor(s%3600/60)+'m';return Math.floor(s/86400)+'d '+Math.floor(s%86400/3600)+'h';}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* ---- feedback ---- */
+function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;const b=$('#toasts');b.appendChild(t);while(b.children.length>3)b.firstChild.remove();setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),300);},2600);}
+function haptic(p){try{if(S&&S.settings.haptics&&navigator.vibrate&&(!navigator.userActivation||navigator.userActivation.hasBeenActive))navigator.vibrate(p||8);}catch(e){}}
+function unlockAudio(){if(AC||!(window.AudioContext||window.webkitAudioContext))return;try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}}
+function sfx(k){if(!AC||!S||!S.settings.sound)return;try{const o=AC.createOscillator(),g=AC.createGain();const T={tap:[520,.04,'square',.03],buy:[660,.08,'triangle',.06],big:[880,.25,'triangle',.08],coin:[1040,.1,'sine',.07],bad:[180,.25,'sawtooth',.05]}[k]||[440,.05,'sine',.05];
+ o.type=T[2];o.frequency.setValueAtTime(T[0],AC.currentTime);if(k==='big'||k==='coin')o.frequency.exponentialRampToValueAtTime(T[0]*1.6,AC.currentTime+T[1]);g.gain.setValueAtTime(T[3],AC.currentTime);g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+T[1]);o.connect(g).connect(AC.destination);o.start();o.stop(AC.currentTime+T[1]+.02);}catch(e){}}
+function floatText(x,y,txt,col){const f=document.createElement('div');f.className='fl';f.textContent=txt;f.style.left=(x-30)+'px';f.style.top=(y-20)+'px';f.style.setProperty('--dx',(Math.random()*40-20)+'px');if(col)f.style.color=col;document.body.appendChild(f);setTimeout(()=>f.remove(),900);}
+function coins(x,y,n){for(let i=0;i<n;i++){const c=document.createElement('div');c.className='coin';c.textContent=pick(['🪙','💵','✨']);c.style.left=x+'px';c.style.top=y+'px';const a=Math.random()*Math.PI*2,r=40+Math.random()*50;c.style.setProperty('--dx',Math.cos(a)*r+'px');c.style.setProperty('--dy',Math.sin(a)*r-30+'px');document.body.appendChild(c);setTimeout(()=>c.remove(),700);}}
+function confetti(n=60){const cols=['#ffc83d','#3ee08f','#53b8ff','#ff5d5d','#b48cff'];for(let i=0;i<n;i++){const c=document.createElement('div');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.top='-20px';c.style.background=pick(cols);c.style.setProperty('--dx',(Math.random()*120-60)+'px');c.style.animationDelay=Math.random()*.4+'s';c.style.animationDuration=1.2+Math.random()*.8+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),2600);}}
+/* ---- modals ---- */
+function modal(html){mQ.push(html);if(!mOpen)nextModal();}
+function nextModal(){const m=mQ.shift();if(m===undefined){$('#mWrap').classList.remove('on');mOpen=false;return;}mOpen=true;$('#modal').innerHTML=m;$('#mWrap').classList.add('on');$('#modal').scrollTop=0;}
+function closeModal(){nextModal();}
+let CONF=null,EVC=null;
+function confirmM(e,t,x,yes,fn,cls='gold'){CONF=fn;modal(`<div class="mE">${e}</div><div class="mT">${t}</div><div class="mX">${x}</div><div class="mC"><button class="btn ${cls}" data-act="cyes">${yes}</button><button class="btn" data-act="close">Cancel</button></div>`);}
+function infoM(e,t,x,btn='Nice'){modal(`<div class="mE">${e}</div><div class="mT">${t}</div><div class="mX">${x}</div><button class="btn gold block" data-act="close">${btn}</button>`);}
+function questToast(list){for(const q of list){confetti(80);sfx('big');haptic([20,40,20]);infoM(q.e,'Life Quest complete!',`<b>${q.n}</b><br><br>Reward: <b class="gld">${q.d}</b>`,'Too easy');}if(list.length)rebuild();}
+const canPrestige=()=>canPrestigeE(S);
+/* ---- goals (always tells you what to do next) ---- */
+function nextGoal(){const b=S.biz;
+ if(b[0].n<10)return [`Tap 🌭 to cook snags, then buy more Sausage Sizzles`,b[0].n/10];
+ if(!b[0].mgr)return [`Hire <b>${MGRS[0]}</b> in Managers so the sizzle runs itself`,S.cash/mgrCost(0)];
+ const nx=b.findIndex(x=>x.n===0);
+ if(S.debt>0){const q=QUEST.find(q=>!S.quest[q.k]);const need=q.f*DEBT0-S.debtPaid;if(nx>0&&nx<4&&S.cash<need)return [`Open a <b>${BIZ[nx].n}</b> (${money(costFor(S,nx,1))})`,S.cash/costFor(S,nx,1)];
+  return [`Pay Big Kev ${money(need)} more → <b>${q.n.split('(')[0]}</b>`,(S.debtPaid/DEBT0)/q.f];}
+ const unman=b.findIndex(x=>x.n>0&&!x.mgr);if(unman>=0&&S.cash>=mgrCost(unman)*.3)return [`Hire a manager for <b>${BIZ[unman].n}</b>`,S.cash/mgrCost(unman)];
+ if(canPrestige()&&starsGain(S)>=Math.max(10,S.stars*.5))return [`Ready to <b>sell up</b> for +${fmtN(starsGain(S))} ⭐ (Boss tab)`,1];
+ if(nx>0)return [`Open a <b>${BIZ[nx].n}</b> (${money(costFor(S,nx,1))})`,S.cash/costFor(S,nx,1)];
+ const u=UPG.find(u=>!S.upg[u.id]);if(u)return [`Save for upgrade: <b>${u.n}</b> (${money(u.cost)})`,S.cash/u.cost];
+ return ['You\'ve built it all. Sell up for more Stars!',1];}
+/* ---- header ---- */
+function renderHdr(){const ips=incomePerSec(S,Date.now(),true);
+ $('#title').textContent=title(S);$('#stars').textContent=S.stars?`⭐ ${fmtN(S.stars)} · +${fmtN(starBonus(S)*100)}%`:'';
+ $('#ips').textContent=`+${money(ips)}/s${S.biz.some(b=>b.n>0&&!b.mgr)?' managed':''}`;
+ const now=Date.now();$('#boosts').innerHTML=S.boosts.filter(b=>b.until>now).map(b=>`<span class="boost">${b.k==='tap'?'👊':'🔥'} ${esc(b.label)} · ${fmtT((b.until-now)/1000)}</span>`).join('');
+ const d=$('#debt');if(S.debt>0){const f=S.debtPaid/DEBT0;d.style.display='';const q=QUEST.find(q=>!S.quest[q.k]);
+  d.innerHTML=`<div class="dt"><span>💀 Owed to Big Kev</span><span>${money(S.debt)}</span></div><div class="bar"><i style="width:${(f*100).toFixed(2)}%"></i></div><div class="hint" style="font-size:11px;margin-top:3px">Next at ${Math.round(q.f*100)}%: ${q.e} ${esc(q.d)}</div><div class="payrow"><button data-act="pay" data-v=".1">Pay 10%</button><button data-act="pay" data-v=".5">Pay 50%</button><button data-act="pay" data-v="1">Pay max</button></div>`;}
+ else d.style.display='none';
+ const [g,p]=nextGoal();$('#goal').innerHTML=`<span>🎯</span><span style="flex:1">${g}</span><span style="font-size:11px;color:var(--sky)">${Math.min(100,Math.floor((p||0)*100))}%</span>`;}
+function updCash(dt){const t=S.cash;shown+=(t-shown)*Math.min(1,dt*10);if(Math.abs(t-shown)<Math.abs(t)*1e-4)shown=t;$('#cash').textContent=money(shown);$('#cash').classList.toggle('neg',S.cash<0);}
+/* ---- tabs ---- */
+const row=(ic,t,s,rt,attrs='',cls='')=>`<button class="row ${cls}" ${attrs}><span class="ic">${ic}</span><span class="tx"><b>${t}</b>${s?`<span>${s}</span>`:''}</span>${rt||''}</button>`;
+function visibleBiz(){let last=-1;S.biz.forEach((b,i)=>{if(b.n>0)last=i;});return Math.min(BIZ.length-1,last+2);}
+function structSig(){return tab+'|'+visibleBiz()+'|'+S.biz.map(b=>b.mgr?1:0).join('')+'|'+Object.keys(S.upg).length+'|'+Object.keys(S.flex).length+'|'+S.stats.prestiges+'|'+JSON.stringify(S.moves)+'|'+Object.keys(S.ach).length+'|'+Object.keys(S.quest).length+'|'+S.buy+'|'+(S.settings.sci?1:0)+'|'+S.grit;}
+function rebuild(){sig='';}
+function renderTab(){const m=$('#main');let h='';
+ if(tab==='biz'){h+=`<div id="tapWrap"><button id="tapBtn" data-act="tap" aria-label="Hustle">👊</button><div id="tapInfo"><b>Hustle</b><span class="hint">Tap for cash. Grows with your empire.</span><div class="v" id="tapV"></div></div></div>`;
+  h+=`<div class="modes">${[[1,'x1'],[10,'x10'],[100,'x100'],['next','Next'],['max','Max']].map(([v,l])=>`<button class="${S.buy==v?'on':''}" data-act="mode" data-v="${v}">${l}</button>`).join('')}</div>`;
+  const vis=visibleBiz();for(let i=0;i<=vis;i++){const B=BIZ[i],b=S.biz[i];const locked=b.n===0;
+   h+=`<div class="biz ${locked?'lock':''}" id="bz${i}"><button class="bico ${!b.mgr&&b.n>0?'idle':''}" id="bi${i}" data-act="run" data-i="${i}">${B.e}<span class="lvl" id="bl${i}">${b.n}</span>${b.mgr?'<span class="mg">🤝</span>':''}</button>
+   <div><div class="bn"><b>${B.n}</b><span class="rv" id="br${i}"></span></div>${locked?`<div class="hint" style="margin:4px 0">${esc(B.d)}</div>`:`<div class="pbar" id="pb${i}"><i id="pf${i}"></i><em id="pt${i}"></em></div>`}
+   <div class="brow"><span class="ms" id="bm${i}"></span><button class="buy" id="bb${i}" data-act="buy" data-i="${i}"></button></div></div></div>`;}
+  if(vis<BIZ.length-1)h+=`<div class="hint" style="text-align:center;margin-top:6px">🔒 ${BIZ.length-1-vis} more businesses to discover</div>`;}
+ else if(tab==='upg'){const list=UPG.filter(u=>!S.upg[u.id]).slice(0,14);const aff=list.filter(u=>u.cost<=S.cash).length;
+  h+=`<div class="sec">Upgrades</div><button class="btn gold block ${aff?'':'dis'}" data-act="buyAllUpg" style="margin-bottom:10px">Buy all affordable (${aff})</button>`;
+  h+=list.map(u=>row(u.e,esc(u.n),u.b===-2?`Hustle taps x3 and +1% of income per tap`:u.b===-1?'Every business earns x3':`${BIZ[u.b].n} profits x3`,`<span class="buy" id="u_${u.id}">${money(u.cost)}</span>`,`data-act="upg" data-v="${u.id}"`)).join('')||'<div class="hint">All upgrades bought. Legend.</div>';
+  const own=UPG.filter(u=>S.upg[u.id]).length;h+=`<div class="hint" style="text-align:center;margin-top:8px">${own}/${UPG.length} owned this run</div>`;}
+ else if(tab==='mgr'){h+=`<div class="sec">Managers</div><div class="hint" style="margin:-4px 4px 10px">Managers run a business automatically, and keep earning while you're away (up to ${fmtT(offlineCap(S))} offline).</div>`;
+  h+=BIZ.map((B,i)=>{const b=S.biz[i];if(b.n===0&&!b.mgr)return '';return b.mgr?row('🤝',`${MGRS[i]} runs ${B.n}`,'Hired',`<span class="pos" style="font-weight:900">✓</span>`,'','done'):row(B.e,`Hire ${MGRS[i]}`,`Runs your ${B.n}`,`<span class="buy" id="m_${i}">${money(mgrCost(i))}</span>`,`data-act="mgr" data-i="${i}"`);}).join('')||'<div class="hint">Open a business first.</div>';}
+ else if(tab==='flex'){h+=`<div class="sec">Flex collection</div><div class="hint" style="margin:-4px 4px 10px">Status toys you keep forever, across every run. Each one adds <b class="gld">+${FLEX_BONUS*100}%</b> to all profits.</div><div class="g3">`;
+  h+=FLEX.map(f=>{const own=S.flex[f.id];return `<button class="flex ${own?'own':''} ${!own&&S.lifetime<f.cost/10?'lockd':''}" data-act="flex" data-v="${f.id}"><span class="fe">${f.e}</span><span>${esc(f.n)}</span><span class="${own?'gld':''}" id="f_${f.id}">${own?'Owned ✓':money(f.cost)}</span></button>`;}).join('')+'</div>';}
+ else if(tab==='boss'){const g=starsGain(S);
+  h+=`<div class="card" style="text-align:center;background:linear-gradient(180deg,#2b2350,var(--card))"><div style="font-size:40px">⭐</div><div class="big" style="color:var(--pur)">${fmtN(S.stars)} Stars</div><div class="hint">+${fmtN(starBonus(S)*100)}% to all profits · Grit to spend: <b class="gld">${fmtN(S.grit)}</b></div>
+  <div style="margin:10px 0" class="hint">Sell up and move interstate to earn Stars based on everything you've ever earned. Your businesses, upgrades and cash reset. You keep Stars, Grit, Flex, Achievements and your Life Quest.</div>
+  <button class="btn pur block ${canPrestige()?'':'dis'}" data-act="prestige" id="presBtn"></button>
+  <div class="hint" id="nextStar" style="margin-top:6px"></div></div>`;
+  h+=`<div class="sec">Boss Moves · spend Grit (earned with Stars)</div>`+MOVES.map(M=>{const l=S.moves[M.id]||0,max=l>=M.max,c=max?0:M.c(l);return row(M.e,`${M.n} <span class="hint">Lv ${l}/${M.max}</span>`,esc(M.d),`<span class="buy ${!max&&S.grit>=c?'can':''}">${max?'MAX':c+' Grit'}</span>`,`data-act="move" data-v="${M.id}"`,max?'done':'');}).join('');
+  h+=`<div class="sec">Life Quest</div>`+QUEST.map(q=>row(q.e,esc(q.n),`${Math.round(q.f*100)}% of debt paid · ${esc(q.d)}`,S.quest[q.k]?'<span class="pos" style="font-weight:900">✓</span>':'<span class="hint">🔒</span>','',S.quest[q.k]?'':'done')).join('');
+  const ga=Object.keys(S.ach).length;h+=`<div class="sec">Achievements · ${ga}/${ACH.length} · +${ga*ACH_BONUS*100}% profits</div><div class="g3" style="grid-template-columns:repeat(4,1fr)">`+ACH.map(a=>`<div class="ach ${S.ach[a.id]?'got':''}"><span class="ae">${a.e}</span>${esc(a.n)}</div>`).join('')+'</div>';
+  h+=`<div class="sec">Stats</div><div class="kv"><div><span>Earned ever</span><b>${money(S.lifetime)}</b></div><div><span>This run</span><b>${money(S.runEarned)}</b></div><div><span>Taps</span><b>${fmtN(S.stats.taps)}</b></div><div><span>Lucky roos</span><b>${S.stats.roos}</b></div><div><span>Events</span><b>${S.stats.events}</b></div><div><span>Sell-ups</span><b>${S.stats.prestiges}</b></div><div><span>Time played</span><b>${fmtT(S.stats.played)}</b></div><div><span>Offline cap</span><b>${fmtT(offlineCap(S))}</b></div></div>`;}
+ m.innerHTML=h;}
+function updTab(){const now=Date.now();
+ if(tab==='biz'){const tv=$('#tapV');if(tv)tv.textContent='+'+money(tapValue(S,now));const gm=globalMult(S,now);
+  for(let i=0;i<=visibleBiz();i++){const b=S.biz[i];const bb=$('#bb'+i);if(!bb)continue;
+   const q=b.n===0?1:buyQty(S,i);const c=costFor(S,i,q);const can=S.cash>=c&&(i===0||S.biz[i-1].n>0||b.n>0);
+   bb.className='buy'+(can?' can':'');bb.innerHTML=`${b.n===0?'Open':'Buy x'+fmtN(q)}<small>${money(c)}</small>`;
+   $('#bl'+i).textContent=b.n;
+   if(b.n>0&&$('#pb'+i)){const t=bizTime(S,i),rev=bizRev(S,i,gm);$('#br'+i).textContent=money(rev)+(t<1?` · ${money(rev/t)}/s`:'');
+    const pb=$('#pb'+i);const fast=t<0.3&&(b.mgr||b.run);pb.classList.toggle('fast',fast);if(!fast)$('#pf'+i).style.width=(Math.min(1,b.p)*100)+'%';
+    $('#pt'+i).textContent=b.mgr||b.run?fmtT((1-b.p)*t):'Tap icon to start';$('#bi'+i).classList.toggle('idle',!b.mgr&&!b.run);
+    const nx=MILESTONES.find(l=>l>b.n);$('#bm'+i).textContent=nx?`${b.n}/${nx} → ${msEffect(nx)==='speed'?'2x speed':'2x profit'}`:'All milestones!';}
+   else $('#bm'+i).textContent=i>0&&S.biz[i-1].n===0?'Open the one above first':'';}}
+ else if(tab==='upg'){for(const u of UPG){const e=$('#u_'+u.id);if(e)e.classList.toggle('can',S.cash>=u.cost);}}
+ else if(tab==='mgr'){BIZ.forEach((B,i)=>{const e=$('#m_'+i);if(e)e.classList.toggle('can',S.cash>=mgrCost(i));});}
+ else if(tab==='flex'){for(const f of FLEX){const e=$('#f_'+f.id);if(e&&!S.flex[f.id])e.className=S.cash>=f.cost?'pos':'';}}
+ else if(tab==='boss'){const g=starsGain(S),e=$('#presBtn');if(e){e.classList.toggle('dis',!canPrestige());e.textContent=!S.quest.free?'🔒 Clear your debt first':g<1?'🔒 Earn more to gain Stars':`Sell up for +${fmtN(g)} ⭐`;}
+  const ns=$('#nextStar');if(ns){const tot=starsTotal(S);const need=Math.pow((tot+1)/5,3)*STAR_DIV-S.lifetime;ns.textContent=`Next Star in ${money(Math.max(0,need))} more earnings`;}}
+ $('#dUpg').classList.toggle('on',UPG.some(u=>!S.upg[u.id]&&u.cost<=S.cash));
+ $('#dMgr').classList.toggle('on',S.biz.some((b,i)=>b.n>0&&!b.mgr&&S.cash>=mgrCost(i)));
+ $('#dFlex').classList.toggle('on',FLEX.some(f=>!S.flex[f.id]&&f.cost<=S.cash));
+ $('#dBoss').classList.toggle('on',(canPrestige()&&starsGain(S)>=Math.max(10,S.stars*.5))||MOVES.some(M=>(S.moves[M.id]||0)<M.max&&S.grit>=M.c(S.moves[M.id]||0)));}
+/* ---- actions ---- */
+function setTab(t){tab=t;$$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));$('#main').scrollTop=0;rebuild();haptic(5);}
+function doBuy(i,el){const b=S.biz[i];const q=b.n===0?1:buyQty(S,i);const before=b.n;if(!buyBiz(S,i,q)){haptic(30);el.classList.add('shake');setTimeout(()=>el.classList.remove('shake'),350);return;}
+ sfx('buy');haptic(8);const r=el.getBoundingClientRect();coins(r.left+r.width/2,r.top,4);
+ const hit=MILESTONES.filter(l=>l>before&&l<=b.n);if(hit.length){const l=hit[hit.length-1];toast(`${BIZ[i].e} ${BIZ[i].n} hit ${l}! ${msEffect(l)==='speed'?'2x speed':'2x profit'}`);sfx('big');const z=$('#bz'+i);if(z){z.classList.remove('flash');void z.offsetWidth;z.classList.add('flash');}}
+ if(before===0){toast(`${BIZ[i].e} ${BIZ[i].n} is open for business!`);confetti(30);rebuild();}
+ afterChange();}
+function afterChange(){const got=checkAch(S);for(const a of got){toast(`🏅 ${a.e} ${a.n} (+${ACH_BONUS*100}% profits)`);sfx('coin');}if(got.length)rebuild();updTab();renderHdr();}
+function doTap(el,ev){unlockAudio();const v=tap(S,Date.now());const r=el.getBoundingClientRect();const x=ev&&ev.clientX?ev.clientX:r.left+r.width/2,y=ev&&ev.clientY?ev.clientY:r.top;
+ floatText(x,y,'+'+money(v));if(Math.random()<.35)coins(x,y,2);el.classList.add('hit');setTimeout(()=>el.classList.remove('hit'),70);sfx('tap');haptic(6);
+ if(S.stats.taps%100===0)afterChange();}
+function prestigeFlow(){const g=starsGain(S);const ns=S.stars+g;const nb=(ns<=1000?ns:1000*Math.pow(ns/1000,.7))*(0.02+0.01*(S.moves.star||0));
+ confirmM('🚚','Sell up and move interstate?',`You'll gain <b style="color:var(--pur)">+${fmtN(g)} ⭐ Stars</b> and <b class="gld">+${fmtN(g)} Grit</b>.<br>Profit bonus: +${fmtN(starBonus(S)*100)}% → <b class="pos">+${fmtN(nb*100)}%</b><br><br>Businesses, upgrades, managers and cash reset. Stars, Grit, Flex, Achievements and Life Quest stay.`,'Sell up! 🚚',()=>{
+  const got=prestige(S);if(!got)return;confetti(120);sfx('big');haptic([30,60,30]);shown=S.cash;setTab('biz');
+  infoM('🌅','Fresh start',`New city, same hustle. You're now earning <b class="pos">+${fmtN(starBonus(S)*100)}%</b> on everything.<br>Spend your <b class="gld">${fmtN(S.grit)} Grit</b> on Boss Moves.`,'Let\'s go');afterChange();save();},'pur');}
+/* events + roos */
+function showEvent(){const pool=EVENTS.filter(e=>!e.c||e.c());const ev=pick(pool);EVC=ev;S.stats.events++;haptic([10,30,10]);sfx('coin');
+ modal(`<div class="hint" style="font-weight:900;letter-spacing:1px;color:var(--gold)">⚡ OPPORTUNITY</div><div class="mE">${ev.e}</div><div class="mT">${esc(ev.t)}</div><div class="mX">${esc(ev.x)}</div><div class="mC">${ev.o.map((o,i)=>`<button class="btn ${i===0?'gold':''}" data-act="evc" data-i="${i}">${esc(o.l)}<small>${esc(o.d())}</small></button>`).join('')}</div>`);}
+function evChoose(i){const ev=EVC;if(!ev)return;EVC=null;const res=ev.o[i].f();closeModal();infoM(ev.e,esc(ev.t),esc(res),'OK');afterChange();save();}
+let rooOn=false;
+function spawnRoo(){const r=$('#roo');if(rooOn||mOpen)return;rooOn=true;r.style.top=(140+Math.random()*(window.innerHeight-320))+'px';r.style.left='-60px';r.classList.remove('on');void r.offsetWidth;r.classList.add('on');
+ setTimeout(()=>{if(rooOn){r.classList.remove('on');rooOn=false;}},9000);}
+function catchRoo(ev){if(!rooOn)return;rooOn=false;const r=$('#roo');r.classList.remove('on');S.stats.roos++;const x=ev.clientX||100,y=ev.clientY||200;coins(x,y,12);sfx('big');haptic([15,30,15]);
+ const k=Math.random();let msg;if(k<.45){const v=Math.max(50,ipsNow()*90+S.cash*.02);earn(S,v);msg=`Lucky roo! +${money(v)}`;}else if(k<.8)msg='Lucky roo! '+boost('p',3,60,'x3 profits');else msg='Lucky roo! '+boost('tap',10,30,'x10 Hustle');
+ floatText(x,y,'🦘!','#3ee08f');toast(msg);afterChange();}
+/* ---- save ---- */
+function save(){if(!S)return;try{S.last=Date.now();localStorage.setItem(SAVE_KEY,JSON.stringify({v:SAVE_VERSION,savedAt:S.last,S}));}catch(e){}}
+function migrate(d){if(!d||!d.S)throw new Error('Not a Battler to Baron save');if((d.v||1)>SAVE_VERSION)throw new Error('Save is from a newer version');const base=newState(),s=d.S;
+ for(const k in base)if(s[k]===undefined)s[k]=base[k];s.stats=Object.assign(base.stats,s.stats);s.settings=Object.assign(base.settings,s.settings);
+ if(!Array.isArray(s.biz))s.biz=base.biz;while(s.biz.length<BIZ.length)s.biz.push({n:0,p:0,run:false,mgr:false});s.v=SAVE_VERSION;return s;}
+function load(){try{const raw=localStorage.getItem(SAVE_KEY);return raw?migrate(JSON.parse(raw)):null;}catch(e){console.warn(e);return null;}}
+function exportCode(){save();return 'BB1:'+btoa(unescape(encodeURIComponent(localStorage.getItem(SAVE_KEY))));}
+function importCode(c){c=(c||'').trim();if(!c.startsWith('BB1:'))throw new Error('Not a Battler to Baron save code');return migrate(JSON.parse(decodeURIComponent(escape(atob(c.slice(4))))));}
+function settingsM(){modal(`<div class="mT">⚙️ Settings</div><div class="g2" style="margin:10px 0"><button class="btn" data-act="tog" data-v="sound">${S.settings.sound?'🔊 Sound on':'🔇 Sound off'}</button><button class="btn" data-act="tog" data-v="haptics">${S.settings.haptics?'📳 Haptics on':'📴 Haptics off'}</button><button class="btn" data-act="tog" data-v="sci">${S.settings.sci?'1.23e15':'1.23Qa'} numbers</button><button class="btn" data-act="help">❓ How to play</button></div>
+ <div class="hint" style="text-align:left;margin-bottom:6px">Backup: copy your save code somewhere safe, or paste one to import.</div><textarea id="saveCode" placeholder="Save code"></textarea>
+ <div class="g3" style="margin-top:8px"><button class="btn" data-act="export">📤 Export</button><button class="btn" data-act="copy">📋 Copy</button><button class="btn gold" data-act="import">📥 Import</button></div>
+ <button class="btn red block" style="margin-top:14px" data-act="reset">🗑️ Reset all progress</button><button class="btn block" style="margin-top:8px" data-act="close">Close</button><div class="hint" style="margin-top:8px">Battler to Baron · save v${SAVE_VERSION} · no ads, no purchases, ever.</div>`);}
+function helpM(){infoM('📖','How to play',`<div style="text-align:left;font-size:13.5px;line-height:1.5">👊 <b>Hustle</b>: tap for quick cash.<br>🏪 <b>Businesses</b>: tap the icon to run a cycle, and buy levels. Milestones (25, 50, 100…) double speed or profit.<br>🤝 <b>Managers</b> automate a business and earn while you're away.<br>💀 <b>Debt</b>: pay Big Kev back to win your life back. Each Life Quest step gives a permanent boost.<br>⚡ <b>Opportunities</b> pop up while you play. Every choice shows exactly what it costs.<br>🦘 <b>Lucky roos</b> hop past: tap them!<br>⭐ <b>Sell up</b> (Boss tab) once debt-free to earn Stars (+% profit) and Grit for Boss Moves.<br>😎 <b>Flex</b> items are kept forever.<br><br>No ads. No paywalls. Offline earnings at full rate.</div>`,'Got it');}
+function welcomeBack(o){if(!o||o.v<=0)return;infoM('🌅','Welcome back!',`You were away <b>${fmtT(o.el)}</b>.<br>Your managers earned<div class="big">${money(o.v)}</div>${o.capped?`<span class="hint">Offline cap: ${fmtT(o.secs)}. Raise it with the Night Shift Boss Move.</span>`:'<span class="hint">Full rate, no strings attached.</span>'}`,'Collect');setTimeout(()=>coins(window.innerWidth/2,180,14),200);}
+
+/* ===== controller ===== */
+document.addEventListener('pointerdown',unlockAudio,{passive:true});
+$('#roo').addEventListener('pointerdown',e=>{e.preventDefault();catchRoo(e);});
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(b)setTab(b.dataset.tab);});
+$('#main').addEventListener('pointerdown',e=>{const b=e.target.closest('#tapBtn');if(b){e.preventDefault();doTap(b,e);}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act,v=b.dataset.v,i=+b.dataset.i;
+ switch(a){
+ case 'tap':if(e.detail===0)doTap(b,e);break;
+ case 'run':if(runBiz(S,i)){haptic(5);sfx('tap');}else if(S.biz[i].n===0)toast('Buy it first!');break;
+ case 'buy':doBuy(i,b);break;
+ case 'mode':S.buy=isNaN(+v)?v:+v;rebuild();break;
+ case 'mgr':if(hireMgr(S,i)){sfx('big');confetti(25);toast(`🤝 ${MGRS[i]} is running your ${BIZ[i].n}!`);rebuild();afterChange();save();}else{haptic(30);b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),350);}break;
+ case 'upg':if(buyUpg(S,v)){sfx('buy');haptic(8);toast('⬆️ '+UPG.find(u=>u.id===v).n);rebuild();afterChange();}else{b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),350);}break;
+ case 'buyAllUpg':{let n=0;for(const u of UPG)if(!S.upg[u.id]&&u.cost<=S.cash&&buyUpg(S,u.id))n++;if(n){sfx('big');toast(`⬆️ Bought ${n} upgrade${n>1?'s':''}`);rebuild();afterChange();}break;}
+ case 'flex':{const f=FLEX.find(x=>x.id===v);if(S.flex[v]){toast(`${f.e} You own the ${f.n}. Looking good.`);break;}if(buyFlex(S,v)){confetti(60);sfx('big');haptic([20,40]);infoM(f.e,f.n,`It's yours, forever. <b class="gld">+${FLEX_BONUS*100}% all profits</b>.`,'Flex');rebuild();afterChange();save();}else toast(`Need ${money(f.cost)}`);break;}
+ case 'pay':{const amt=Math.min(S.debt,v==='1'?S.cash:S.cash*+v);if(amt<=0){toast('No cash to pay with yet');break;}const q=payDebt(S,amt);sfx('coin');haptic(10);toast(`Paid Big Kev ${money(amt)}`);if(S.debt<=0)confetti(150);questToast(q);afterChange();save();break;}
+ case 'move':{const M=MOVES.find(x=>x.id===v);if(buyMove(S,v)){sfx('big');toast(`${M.e} ${M.n} → Lv ${S.moves[v]}`);rebuild();afterChange();save();}else toast((S.moves[v]||0)>=M.max?'Maxed out':'Not enough Grit');break;}
+ case 'prestige':prestigeFlow();break;
+ case 'evc':evChoose(i);break;
+ case 'cyes':{const f=CONF;CONF=null;closeModal();f&&f();break;}
+ case 'close':closeModal();break;
+ case 'settings':settingsM();break;
+ case 'help':closeModal();helpM();break;
+ case 'tog':S.settings[v]=!S.settings[v];closeModal();settingsM();rebuild();save();break;
+ case 'export':$('#saveCode').value=exportCode();toast('📤 Save code ready');break;
+ case 'copy':{const ta=$('#saveCode');if(!ta.value)ta.value=exportCode();ta.select();(navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(ta.value):Promise.reject()).then(()=>toast('📋 Copied!')).catch(()=>{try{document.execCommand('copy');toast('📋 Copied!');}catch(_){toast('Select and copy manually');}});break;}
+ case 'import':try{S=importCode($('#saveCode').value);shown=S.cash;save();closeModal();rebuild();renderHdr();toast('📥 Save imported!');}catch(err){toast('❌ '+err.message);$('#saveCode').classList.add('shake');}break;
+ case 'reset':closeModal();confirmM('🗑️','Reset everything?','This deletes ALL progress: Stars, Flex, achievements, everything. Export a save code first if you might want it back.','Delete everything',()=>{localStorage.removeItem(SAVE_KEY);S=newState();shown=0;save();setTab('biz');intro();},'red');break;
+ }});
+/* ---- loop ---- */
+let achAcc=0;
+function frame(t){const dt=Math.min(1,Math.max(0,(t-lastT)/1000));lastT=t;
+ if(S){const now=Date.now();tick(S,dt,now);
+  if(!mOpen&&!document.hidden){S.evNext-=dt;S.rooNext-=dt;
+   if(S.evNext<=0){S.evNext=rnd(150,300);if(S.biz.filter(b=>b.n>0).length>=2)showEvent();}
+   if(S.rooNext<=0){S.rooNext=rnd(70,140)/(1+0.15*(S.moves.roo||0));if(S.stats.played>40)spawnRoo();}}
+  uiAcc+=dt;updCash(dt);
+  if(uiAcc>=0.1){uiAcc=0;const s=structSig();if(s!==sig){sig=s;renderTab();}updTab();renderHdr();if(++achAcc%20===0){const got=checkAch(S);if(got.length){got.forEach(a=>toast(`🏅 ${a.e} ${a.n} (+${ACH_BONUS*100}% profits)`));rebuild();}}}}
+ requestAnimationFrame(frame);}
+function resume(){if(!S)return;const o=offline(S,Date.now());S.last=Date.now();if(o){shown=S.cash-o.v;welcomeBack(o);afterChange();}}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)save();else resume();});
+window.addEventListener('pagehide',save);
+setInterval(()=>{if(!document.hidden)save();},5000);
+function setupManifest(){try{const icon=document.querySelector('link[rel=apple-touch-icon]').href;const m={name:'Battler to Baron',short_name:'Battler2Baron',start_url:location.href.split('#')[0],display:'standalone',orientation:'portrait',background_color:'#0b1a14',theme_color:'#0b1a14',icons:[{src:icon,sizes:'192x192',type:'image/png',purpose:'any maskable'}]};$('#manifestLink').href='data:application/manifest+json;charset=utf-8,'+encodeURIComponent(JSON.stringify(m));}catch(e){}}
+function intro(){modal(`<div class="mE">💀</div><div class="logo">Battler to <span>Baron</span></div><div class="mX" style="margin-top:8px">Your "revolutionary" crypto-for-pets startup collapsed. You owe <b class="neg">${money(DEBT0)}</b> to Big Kev, the ute's been repo'd, and your mates won't answer the phone.<br><br>All you've got is a barbecue and a packet of snags.<br><br><b>Flip snags. Build an empire. Win your life back.</b></div><button class="btn gold block" data-act="close">🌭 Fire up the barbie</button><div class="hint" style="margin-top:8px">No ads. No paywalls. Ever.</div>`);}
+function init(){setupManifest();S=load();if(!S){S=newState();save();intro();}else{const o=offline(S,Date.now());if(o)welcomeBack(o);}
+ S.last=Date.now();shown=S.cash;renderHdr();requestAnimationFrame(t=>{lastT=t;frame(t);});}
+window.BB={get S(){return S;},set S(v){S=v;},save,load,tick,offline,incomePerSec,starsGain,prestige:()=>prestige(S),payDebt:a=>payDebt(S,a),showEvent,spawnRoo,exportCode,DEBT0,setTab};
+init();
+</script>
+</body>
+</html>
